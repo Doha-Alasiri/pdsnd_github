@@ -1,15 +1,21 @@
 ### Date created
-Include the date you created this project and README file.
+14/12/2020
 
-### Project Title
-Replace the Project Title
+### Explore US Bikeshare Data
+This project provides interactive data and statistics about Bikeshare in Chicago, Washington and New York City using python
 
-### Description
-Describe what your project is about and what it does
 
 ### Files used
-Include the files used
+- chicago.csv
+- new_york_city.csv
+- washington.csv
+- bikeshare.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+[medium](https://medium.com/towards-artificial-intelligence/efficient-pandas-using-chunksize-for-large-data-sets-c66bf3037f93)
 
+[stackoverflow](https://stackoverflow.com/questions/48590268/pandas-get-the-most-frequent-values-of-a-column/48590361)
+
+[stackoverflow](https://stackoverflow.com/questions/21291259/convert-floats-to-ints-in-pandas)
+
+[stackoverflow](https://stackoverflow.com/questions/19377969/combine-two-columns-of-text-in-pandas-dataframe)
