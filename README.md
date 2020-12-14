@@ -1,6 +1,12 @@
 ### Explore US Bikeshare Data
 This project provides interactive data and statistics about Bikeshare in Chicago, Washington and New York City using python
 
+### Requirements
+- Python 3.6
+- Python Libraries:
+  * pandas
+  * numpy
+  * time
 
 ### Files used
 - chicago.csv
