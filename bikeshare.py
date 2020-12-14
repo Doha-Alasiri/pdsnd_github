@@ -18,7 +18,7 @@ def get_filters():
     """
 
     print('Hello! Let\'s explore some US bikeshare data!\n')
-    
+
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input(
@@ -26,21 +26,21 @@ def get_filters():
         if city == 'chicago':
             print('\nlooks like you want to see data for Chicago!\n')
             break
-            
+
         elif city == 'new york city':
             print('\nlooks like you want to see data for New York City!\n')
             break
-            
+
         elif city == 'washington':
             print('\nlooks like you want to see data for Washington!\n')
             break
-            
+
         else:
             print('Something went wrong! Make sure to enter a valid city.\n')
             continue
 
     # get user input for month and day of week
-    
+
     while True:
         filter_by = input(
             "Would you like to filter the data by month, day, both, or not at all? Type 'none' for no time filter.\n").lower()
@@ -85,7 +85,7 @@ def get_filters():
         elif filter_by == 'none':
             month = None
             day = None
-            print('No time filter was applied!')
+            print('No time filter was applied!\n')
             break
 
         else:
@@ -116,7 +116,7 @@ def load_data(city, month, day):
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-    
+
 
     # filter by month if applicable
     if month != 'all' and month != None:
@@ -140,7 +140,7 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
+
 
     # display the most common month
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -179,7 +179,7 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
     df['Start and End Station'] = df['Start Station'] + " to " + df['End Station']
     frq_comb_start_end = df['Start and End Station'].value_counts().idxmax()
-    print('Most Frequent Combination of Start Station and End Station: ', frq_comb_start_end) 
+    print('Most Frequent Combination of Start Station and End Station: ', frq_comb_start_end)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -237,8 +237,8 @@ def user_stats(df):
 
 
 def main():
-    
- 
+
+
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
@@ -247,15 +247,16 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
+
+        # Ask to show row data
         raw_data = input('\nDo you want to see the raw data? Enter "yes" or "no".\n')
         while raw_data.lower() == 'yes':
             data_iterator = pd.read_csv(CITY_DATA[city], chunksize = 5)
             print(next(data_iterator))
             raw_data = input('\nDo you want to see more of the data? Enter "yes" or "no".\n')
-        
 
-            
+
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
@@ -263,4 +264,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
