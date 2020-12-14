@@ -85,7 +85,7 @@ def get_filters():
         elif filter_by == 'none':
             month = None
             day = None
-            print('No time filter was applied!')
+            print('No time filter was applied!\n')
             break
 
         else:
