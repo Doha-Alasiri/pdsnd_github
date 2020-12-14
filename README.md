@@ -1,6 +1,3 @@
-### Date created
-14/12/2020
-
 ### Explore US Bikeshare Data
 This project provides interactive data and statistics about Bikeshare in Chicago, Washington and New York City using python
 
